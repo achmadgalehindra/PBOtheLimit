@@ -174,24 +174,24 @@ class Main5(Main2, restuku.MyFrame5):
         self.m_textCtrl6.SetValue(jenisMenu)
         self.m_textCtrl7.SetValue(hargaMenu)
                  
-    def btn_simpanEdit(self, event):
-         kodeMenu = self.m_textCtrl3.GetValue()
-         namaMenu = self.m_textCtrl4.GetValue()
-         jenisMenu = self.m_textCtrl6.GetValue()
-         hargaMenu = self.m_textCtrl7.GetValue()
+    def button_simpanEdit(self, event):
+        kodeMenu = self.m_textCtrl3.GetValue()
+        namaMenu = self.m_textCtrl4.GetValue()
+        jenisMenu = self.m_textCtrl6.GetValue()
+        hargaMenu = self.m_textCtrl7.GetValue()
 
-         self.query = "UPDATE pilihanMenu set namaMenu = \'%s\', jenisMenu = \'%s\', hargaMenu = \'%s\'"
-         self.query = self.query % (namaMenu, jenisMenu, hargaMenu)
-         self.DM.run(self.query)
-         if kodeMenu != "":
-             #wx.MessageBox('Successfully')
-             self.button_Refresh2(event)
-         #else :
-             #wx.MessageBox('Failed')
+        self.query = "UPDATE pilihanMenu set namaMenu = \'%s\', jenisMenu = \'%s\', hargaMenu = \'%s\' WHERE kodeMenu = \'%s\'"
+        self.query = self.query % (namaMenu, jenisMenu, hargaMenu, kodeMenu)
+        self.DM.run(self.query)
+        if kodeMenu != "":
+            wx.MessageBox('Successfully')
+            self.button_Refresh2(event)
+        else :
+            wx.MessageBox('Failed')
 
-    def btn_hapus( self, event ):
+    def button_hapus( self, event ):
          kodeMenu = self.m_textCtrl3.GetValue()
-         self.query = "DROP From pilihanMenu WHERE kodeMenu = \'%s\'"
+         self.query = "DELETE From pilihanMenu WHERE kodeMenu = \'%s\'"
          self.query = self.query % (kodeMenu)
          self.DM.run(self.query)
          if kodeMenu != "":
