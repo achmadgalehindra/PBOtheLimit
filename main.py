@@ -271,7 +271,7 @@ class Main6(Main3, restuku.MyFrame6):
              wx.MessageBox('No empty data')
 
 
-    def button_kembali( self, event ):
+    def button_hapus( self, event ):
          event = Main3(None)
          event.Show()
          self.Destroy()
@@ -375,7 +375,7 @@ class Main8(Main2, restuku.MyFrame8):
          self.Destroy()
         
      def button_keluar( self, event ):
-         event = Main3(None)
+         event = Main6(None)
          event.Show()
          self.Destroy()
          self.DM.conn.close()
