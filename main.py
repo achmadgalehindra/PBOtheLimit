@@ -19,7 +19,7 @@ class Main(cekDB, restuku.MyFrame1):
     def __init__(self, parent):
         restuku.MyFrame1.__init__(self, parent)
         self.DM = cekDB()
-
+#objek dibuat maka tombol disesuaikan dengan kondisi
     def button_login( self, event ):
         username = self.m_textCtrl1.GetValue()
         password = self.m_textCtrl2.GetValue()
@@ -375,7 +375,7 @@ class Main8(Main2, restuku.MyFrame8):
          self.Destroy()
         
      def button_keluar( self, event ):
-         event = Main6(None)
+         event = Main3(None)
          event.Show()
          self.Destroy()
          self.DM.conn.close()
